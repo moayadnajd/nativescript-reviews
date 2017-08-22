@@ -1,40 +1,49 @@
-# Your Plugin Name
+# Nativescript Reviews
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+### ready to use reivews box
 
-Then describe what's the purpose of your plugin. 
+<img src="http://codeobia.com/screenshots/reviews.png" width="300">
 
-In case you develop UI plugin, this is where you can add some screenshots.
+## Install
 
-## (Optional) Prerequisites / Requirements
+```
+tns plugin add nativescript-reviews
+```
+[click here to Download fontawesome-webfont.ttf](https://github.com/moayadnajd/nativescript-fontawesome/blob/master/fonts/fontawesome-webfont.ttf) or download from [fontawesome website](http://fontawesome.io/)
 
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
-
-## Installation
-
-Describe your plugin installation steps. Ideally it would be something like:
-
-```javascript
-tns plugin add <your-plugin-name>
+* Place font icon `.ttf` file in `app/fonts`, like below:
+  
+```
+app/fonts/fontawesome-webfont.ttf
 ```
 
-## Usage 
+### Usage
+```
+<UI:Reviews reviews="{{ reviews }}"  />
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+```
 
-## API
+#### with more options 
+```
+<!-- default -->
+<UI:Reviews reviews="{{ reviews }}"  />
+<!-- reviews with custom date handler  -->
+<UI:Reviews dateHandler="arabicDateTime" title="With date handler" reviews="{{ reviews }}" scroll="false" />
+<!-- reviews with custom plugin for caching   -->
+<UI:Reviews title="Image cache plugins " scroll="false" plugin="{{ plugin }}" imagetag="{{ imagetag }}" reviews="{{ reviewsWithWebImages }}" /> 
+<!-- reviews with scroll inside   -->
+<UI:Reviews title="Scroll inside" scroll="true" reviews="{{ lotofreviews }}" />
+``` 
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
+## see [demo](https://github.com/moayadnajd/nativescript-reivews/tree/master/demo) for more details
+
+
 | Property | Default | Description |
 | --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
-## License
-
-Apache License Version 2.0, January 2004
+| reivews | required | Array of reivew object {image: "~/images/icon-50.png", username: "Moayad Najdawi", review: "this is the first review", rate: 5, datetime: new Date(Date.now() - 24 * 60 * 60 * 1000)}|
+| scroll | true | enable or disable scrollview inside the reivews holder |
+| imagetag | <Image /> | the xml element of the image  so you can change it if you need to add cache plugin or something |
+| plugin | empty string | plugin include statment like xmlns:IC="nativescript-web-image-cache" |
+| title | Reivews | the title of the reivews box |
+| dateHandler | a go | you can change the date text by provide filter inside app resources see app.ts  |   
+ 

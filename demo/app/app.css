@@ -1,1 +1,33 @@
 ﻿@import 'nativescript-theme-core/css/core.light.css';
+
+
+.review-title {
+    width: auto;
+    horizontal-align: left;
+    font-weight: 700;
+    border-bottom-width: 1;
+    border-bottom-color: black;
+}
+.review-star {
+    color: orange;
+}
+.review {
+    margin-top: 10;
+}
+
+.review-username {
+    font-weight: 700;
+    margin-right: 10;
+}
+
+.review-datetime {
+    color: #999;
+}
+
+.review-details{
+    padding-left: 10;
+}
+
+.review-text{
+    
+}

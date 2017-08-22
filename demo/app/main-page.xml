@@ -1,6 +1,13 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
-  xmlns:ui="nativescript-reviews">
+  xmlns:UI="nativescript-reviews">
   <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+  <!-- default -->
+   <UI:Reviews reviews="{{ reviews }}"  />
+    <!-- reviews with custom date handler  -->
+   <UI:Reviews dateHandler="arabicDateTime" title="With date handler" reviews="{{ reviews }}" scroll="false" />
+    <!-- reviews with custom plugin for caching   -->
+   <UI:Reviews title="Image cache plugins " scroll="false" plugin="{{ plugin }}" imagetag="{{ imagetag }}" reviews="{{ reviewsWithWebImages }}" /> 
+     <!-- reviews with scroll inside   -->
+   <UI:Reviews title="Scroll inside" scroll="true" reviews="{{ lotofreviews }}" /> 
   </StackLayout>
 </Page>

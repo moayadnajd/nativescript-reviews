@@ -1,7 +1,7 @@
 {
     "name": "nativescript-reviews",
     "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "description": "Your awesome NativeScript plugin for render a reviews box",
     "main": "reviews",
     "typings": "index.d.ts",
     "nativescript": {
@@ -12,7 +12,7 @@
     },
     "scripts": {
         "tsc": "tsc -skipLibCheck",
-        "build": "npm i && tsc", 
+        "build": "npm i && tsc",
         "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && cd ../src && npm run plugin.link",
         "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
         "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
@@ -29,12 +29,16 @@
     "keywords": [
         "NativeScript",
         "JavaScript",
+        "reviews",
+        "codeobia",
+        "moayad",
+        "najdawi",
         "Android",
         "iOS"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "Moayad Najdawi",
+        "email": "moayad@codeobia.com"
     },
     "bugs": {
         "url": "https://github.com/moayadnajd/nativescript-reviews/issues"
@@ -53,6 +57,8 @@
         "rimraf": "^2.5.0",
         "tslint": "^5.0.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "nativescript-fontawesome": "^1.0.0"
+    },
     "bootstrapper": "nativescript-plugin-seed"
 }
