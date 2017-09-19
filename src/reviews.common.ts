@@ -101,6 +101,12 @@ export class Common extends StackLayout {
     this.addChild(this.scrollview);
 
   }
+
+  public refresh(){
+    this.headtitle.text= this.reviewCount();
+    this.rep.items = this.reviews;
+    this.rep.refresh();
+  }
   constructor() {
     super();
     let self = this;
