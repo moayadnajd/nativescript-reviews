@@ -26,10 +26,28 @@ export class Common extends StackLayout {
   private likeQ = [];
   private headtitle: any;
   public dateHandler: any;
+
+  public static longEvent: string = "long";
   public reviewCount() {
     let count = this.reviews.length;
     return this.title + ' (' + count + ')';
   }
+
+  public LongPress(args) {
+
+    let obj = args.object;
+    let self = <Common>args.object.parent.bindingContext;
+    let id = obj.get('dataid');
+    let items = self.reviews.filter((item) => {
+      return item.id == id;
+    });
+    self.notify({
+      eventName: Common.longEvent,
+      object: self,
+      item: items[0],
+    });
+  }
+
   public init() {
 
     let self = this;
@@ -72,7 +90,7 @@ export class Common extends StackLayout {
       reviewsDateTo = "reviewsDateTo";
 
     this.rep.itemTemplate = `
-        <GridLayout  ${ plugin} class="review" rows="auto" columns="auto,*">
+        <GridLayout  dataid="{{ id,id }}"  longPress="{{$parents['Repeater'].LongPress,$parents['Repeater'].LongPress}}" ${ plugin} class="review" rows="auto" columns="auto,*">
         ${imageholder}
         <StackLayout class="review-details" row="0" col="1">
         <StackLayout orientation="horizontal">
@@ -102,8 +120,8 @@ export class Common extends StackLayout {
 
   }
 
-  public refresh(){
-    this.headtitle.text= this.reviewCount();
+  public refresh() {
+    this.headtitle.text = this.reviewCount();
     this.rep.items = this.reviews;
     this.rep.refresh();
   }
@@ -116,7 +134,7 @@ export class Common extends StackLayout {
 
     let resources = application.getResources();
 
-    
+
 
 
 

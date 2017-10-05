@@ -2,7 +2,7 @@
   xmlns:UI="nativescript-reviews">
   <StackLayout class="p-20">
   <!-- default -->
-   <UI:Reviews reviews="{{ reviews }}"  />
+   <UI:Reviews long="{{ longpressed }}" reviews="{{ reviews }}"  />
     <!-- reviews with custom date handler  -->
    <UI:Reviews dateHandler="arabicDateTime" title="With date handler" reviews="{{ reviews }}" scroll="false" />
     <!-- reviews with custom plugin for caching   -->
