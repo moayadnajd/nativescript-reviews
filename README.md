@@ -34,6 +34,11 @@ app/fonts/fontawesome-webfont.ttf
 <!-- reviews with scroll inside   -->
 <UI:Reviews title="Scroll inside" scroll="true" reviews="{{ lotofreviews }}" />
 ``` 
+## refresh() this function you can triger after you get remote data 
+
+let review = getViewById('review');
+//you can do remote request or delay 
+review.refresh(); // then refresh your values
 
 ## see [demo](https://github.com/moayadnajd/nativescript-reviews/tree/master/demo) for more details
 
