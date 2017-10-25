@@ -12,6 +12,6 @@
         <UI:Reviews title="Scroll inside" scroll="true" reviews="{{ lotofreviews }}"/>
 
         <!-- reviews without title    -->
-        <UI:Reviews title="Scroll inside" showHeader="false" scroll="true" reviews="{{ lotofreviews }}"/>
+        <UI:Reviews title="Review" showHeader="false" scroll="true" reviews="{{ lotofreviews }}"/>
     </StackLayout>
 </Page>
