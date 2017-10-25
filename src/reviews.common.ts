@@ -16,6 +16,7 @@ export class Common extends StackLayout {
   private replytoWraper: any;
   public reviews: any = [];
   public scroll: any = true;
+  public showHeader: any = true;
   public imagetag: any;
   private initscroll = true;
   public title: string = "Reviews";
@@ -58,11 +59,18 @@ export class Common extends StackLayout {
       this.scroll = false;
     else
       this.scroll = true;
+      if (this.showHeader === "false")
+          this.showHeader = false;
+      else
+          this.showHeader = true;
     let hrlight = this.parseOptions(new StackLayout(), { className: "hr-light" });
     this.headtitle = this.parseOptions(new Label(), { class: "review-title", text: this.reviewCount() });
     // this.addChild(grid);
-    this.addChild(this.headtitle);
-    this.addChild(hrlight);
+      if(this.showHeader){
+          this.addChild(this.headtitle);
+          this.addChild(hrlight);
+      }
+
     // <GridLayout rows="*,auto">
     let imageholder = "";
     if (this.imagetag)
