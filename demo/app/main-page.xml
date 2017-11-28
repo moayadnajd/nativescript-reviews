@@ -6,7 +6,7 @@
         
    
         <!-- default -->
-        <UI:Reviews long="{{ longpressed }}" reviews="{{ reviews }}"/>
+        <UI:Reviews user="{{ userTap }}" long="{{ longpressed }}" reviews="{{ reviews }}"/>
         <!-- reviews with custom date handler  -->
         <UI:Reviews dateHandler="arabicDateTime" title="With date handler" reviews="{{ reviews }}" scroll="false"/>
         <!-- reviews with custom plugin for caching   -->

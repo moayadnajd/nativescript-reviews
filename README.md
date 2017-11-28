@@ -52,4 +52,4 @@ review.refresh(); // then refresh your values
 | plugin | empty string | plugin include statment like xmlns:IC="nativescript-web-image-cache" |
 | title | reviews | the title of the reviews box |
 | dateHandler | a go | you can change the date text by provide filter inside app resources see app.ts  |   
- 
+| user | event | fire on tap on user image or name return the review object  | 
